@@ -18,7 +18,7 @@ body {
 .envelope {
   position: relative;
   display: block;
-  width: 300px;
+  width: 298px;
   height: 200px;
   margin: auto;
   background-color: #C9D0D2;
@@ -27,11 +27,17 @@ body {
 .envelope .envelope__card {
   position: absolute;
   bottom: 0;
-  display: block;
-  width: 250px;
-  height: 200px;
-  margin: 0 25px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 270px; 
+  height:190px;
   background-color: #f5f6d6;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 300px;
 }
 
 .envelope .envelope__card.open {
@@ -39,14 +45,16 @@ body {
   -o-animation: cardJump .5s ease .5s forwards;
   animation: cardJump .5s ease .5s forwards;
   z-index: 1;
+  height:300px;
 }
 
 .envelope .enveloper__card-text {
   padding: 10px 20px;
-  font-size: 42px;
+  font-size: 16px;
   margin: 0;
-  color: black;
-  font-family: 'Amatic SC', cursive;
+  color: rgb(12, 44, 227);
+  word-wrap: break-word;
+   font-family: 'Great Vibes', cursive;
 }
 
 .envelope .envelope__side {
@@ -93,16 +101,26 @@ body {
   border-color: transparent transparent #C9D0D2 transparent;
 }
 
+.signature {
+  position: absolute;
+  top: 50;
+  right: 15px;
+  margin: 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 18px;
+  color: rgb(12, 44, 227);
+  text-align: right;
+}
+
 .heart {
-  position: relative;
-  top: 50%;
+  position: absolute;
+  bottom: 10px;
   left: 50%;
-  margin-top: -25%;
-  margin-left: -25px;
-  width: 50px;
+  transform: translateX(-50%);
+  width: 60px;
   fill: red;
-  z-index: 2;
-  transition: 0.2s;
+  z-index: 3;
+  cursor: pointer;
 }
 
 .envelope:hover .heart {
